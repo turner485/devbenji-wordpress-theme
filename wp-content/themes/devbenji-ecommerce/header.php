@@ -8,14 +8,27 @@
 <body <?php body_class(); ?>>
     <header>
         <div class="site-header">
-            <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-            <p><?php bloginfo('description'); ?></p>
-            <nav>
+            <div class="site-branding">
+                <?php if (has_custom_logo()) : ?>
+                    <div class="site-logo">
+                        <?php the_custom_logo(); ?>
+                    </div>
+                <?php endif; ?>
+                <div class="site-title">
+                    <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <p><?php bloginfo('description'); ?></p>
+                </div>
+            </div>
+            <nav class="site-navigation">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
+                    'menu_id'        => 'primary-menu',
                 ));
                 ?>
             </nav>
+            <div class="site-search">
+                <?php get_search_form(); ?>
+            </div>
         </div>
     </header>
