@@ -1,1 +1,1 @@
-# Devbenji woocommerce wordpress theme [WIP]
+# Devbenji wordpress theme [WIP]
